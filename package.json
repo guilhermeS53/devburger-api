@@ -1,0 +1,19 @@
+{
+  "name": "devburger-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Guilherme Sousa",
+    "url": "https://github.com/guilhermeS53"
+  },
+  "license": "ISC",
+  "description": "DevBurger Api",
+  "dependencies": {
+    "devburger-api": "file:",
+    "express": "^4.21.2"
+  }
+}
