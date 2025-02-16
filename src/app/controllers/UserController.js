@@ -12,7 +12,12 @@ class UserController {
             password_hash,
             admin,
         });
-        return res.status(201).json(user);
+        return res.status(201).json({
+            id: user.id,
+            name: user.name,
+            email: user.email,
+        }
+        );
     }
 }
 
