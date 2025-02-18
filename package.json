@@ -13,6 +13,8 @@
   "license": "ISC",
   "description": "DevBurger Api",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.1",
     "devburger-api": "file:",
     "express": "^4.21.2",
     "pg": "^8.13.3",
