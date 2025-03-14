@@ -27,7 +27,7 @@ class ProductController {
 
     return res.status(201).json({ message: "Produto criado com sucesso!" });
   }
-  
+
   async index(req, res) {
     const products = await Product.findAll();
     return res.status(200).json(products);
