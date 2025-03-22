@@ -11,6 +11,7 @@ const router = Router();
 
 const upload = multer(multerConfig);
 
+router.get("/users", UserController.index);
 router.post("/users", UserController.store);
 router.post("/session", SessionController.store);
 
