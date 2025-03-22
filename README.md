@@ -21,4 +21,4 @@ Esse projeto consiste em uma aplicação Full Stack utilizando React no Frontend
 ## Requisitos
 - Node.js instalado
 - PostgreSQL instalado
-- NPM Yarn instalado
+- Node Package Modules (NPX)
