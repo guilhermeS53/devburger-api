@@ -6,6 +6,7 @@ import SessionController from "./app/controllers/SessionController";
 import ProductController from "./app/controllers/ProductController";
 import CategoryController from "./app/controllers/CategoryController";
 import authMiddleware from "./app/middlewares/auth";
+import OrderController from "./app/controllers/OrderController";
 
 const router = Router();
 
@@ -21,5 +22,7 @@ router.get("/products", ProductController.index);
 
 router.post("/categories", CategoryController.store);
 router.get("/categories", CategoryController.index);
+
+router.post("/orders", OrderController.store);
 
 export default router;
