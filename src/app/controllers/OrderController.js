@@ -2,6 +2,7 @@ import * as Yup from "yup";
 import Order from "../schemas/Order";
 import Product from "../models/Product";
 import Category from "../models/Category";
+import * as res from "express/lib/response";
 
 class OrderController {
   async store(req, res) {
@@ -63,6 +64,35 @@ class OrderController {
     const createdOrder = await Order.create(order);
 
     return res.status(201).json(createdOrder);
+  }
+
+  async index(req, res) {
+    const orders = await Order.find();
+
+    return res.json(orders);
+  }
+
+  async update(req, res) {
+    const schema = Yup.object().shape({
+      status: Yup.string().required(),
+    });
+
+    try {
+      schema.validateSync(req.body, { abortEarly: false });
+    } catch (error) {
+      return res.status(400).json({ error: error.errors });
+    }
+
+    const { id } = req.params;
+    const { status } = req.body;
+
+    try {
+      await Order.updateOne({ _id: id }, { status });
+    } catch (error) {
+      return res.status(400).json({ error: error.message });
+    }
+
+    return res.json({ message: "Status updated successfully" });
   }
 }
 
